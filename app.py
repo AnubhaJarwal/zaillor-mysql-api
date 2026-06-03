@@ -3,6 +3,10 @@ import mysql.connector
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "API is working!"
+
 @app.route('/saveLead', methods=['POST'])
 def save_lead():
 
@@ -11,7 +15,7 @@ def save_lead():
     conn = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="Root@123",   # your MySQL password
+        password="",   # your MySQL password
         database="zaillor_db"
     )
 
